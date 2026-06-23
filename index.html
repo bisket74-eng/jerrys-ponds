@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jerry's Ponds LLC | Artistic Pond Design in the Tri-Cities Washington Area</title>
+  <title>Jerry's Ponds LLC | Artistic Pond Design in the Tri-Cities Area</title>
 
   <style>
     :root {
@@ -13,7 +13,6 @@
       --water2: #63e0ee;
       --moss: #8fc46c;
       --moss-dark: #4b7f35;
-      --sand: #f4e7c5;
       --cream: #fffaf0;
       --shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
     }
@@ -99,7 +98,7 @@
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 35%, #ffffff 0 6%, transparent 7%),
-        radial-gradient(circle at 45% 45%, var(--water), var(--pond) 58%, var(--moss));
+        radial-gradient(circle at 45% 45%, var(--water), var(--pond) 58%, #8fc46c);
       box-shadow: 0 0 32px rgba(57, 198, 214, 0.55);
       position: relative;
       flex: 0 0 auto;
@@ -154,7 +153,7 @@
     .nav-call {
       padding: 10px 15px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--water), var(--moss));
+      background: linear-gradient(135deg, var(--water), #8fc46c);
       color: #06262a;
       font-weight: 800;
       box-shadow: 0 12px 30px rgba(57,198,214,0.22);
@@ -193,14 +192,15 @@
       color: rgba(255,255,255,0.84);
     }
 
+    /* POND SCENE */
     .pond-art {
       position: relative;
-      min-height: 510px;
+      min-height: 530px;
       border-radius: 38px;
       background:
-        radial-gradient(circle at 47% 42%, rgba(99, 224, 238, 0.55), transparent 26%),
-        radial-gradient(circle at 50% 60%, rgba(57, 198, 214, 0.18), transparent 40%),
-        linear-gradient(180deg, #06323a 0%, #08343f 36%, #0a3f47 100%);
+        radial-gradient(circle at 48% 40%, rgba(99, 224, 238, 0.58), transparent 26%),
+        radial-gradient(circle at 50% 62%, rgba(57, 198, 214, 0.18), transparent 42%),
+        linear-gradient(180deg, #06323a 0%, #083740 36%, #0a414a 100%);
       box-shadow: var(--shadow);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.18);
@@ -208,68 +208,152 @@
 
     .pond-scene-top {
       position: absolute;
-      inset: 0 0 150px 0;
+      inset: 0 0 155px 0;
       pointer-events: none;
+    }
+
+    .scene-ground {
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      bottom: 68px;
+      height: 88px;
+      border-radius: 50% 50% 42% 42% / 65% 65% 35% 35%;
+      background:
+        radial-gradient(ellipse at center, rgba(0,0,0,0.26), rgba(0,0,0,0) 72%),
+        linear-gradient(180deg, rgba(18,54,58,0.62), rgba(7,26,30,0.08));
+      opacity: 0.95;
+      filter: blur(0.2px);
+    }
+
+    .shore-shadow {
+      position: absolute;
+      left: 44px;
+      right: 44px;
+      bottom: 78px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.30), rgba(0,0,0,0) 72%);
+      opacity: 0.7;
     }
 
     .rock {
       position: absolute;
-      left: 48px;
-      top: 78px;
-      width: 185px;
-      height: 118px;
-      background: linear-gradient(145deg, #c3c5c8 0%, #8e9499 45%, #6e7479 100%);
-      clip-path: polygon(
-        8% 30%, 18% 14%, 38% 7%, 63% 10%, 82% 21%, 93% 40%,
-        91% 62%, 79% 80%, 58% 91%, 32% 93%, 14% 84%, 5% 62%
-      );
-      border-radius: 18px;
-      box-shadow:
-        inset 18px 12px 20px rgba(255,255,255,0.22),
-        inset -14px -16px 18px rgba(0,0,0,0.22),
-        0 12px 28px rgba(0,0,0,0.28);
+      left: 40px;
+      top: 134px;
+      width: 205px;
+      height: 128px;
       transform: rotate(-7deg);
+      border-radius: 18px;
+      clip-path: polygon(
+        7% 36%, 16% 16%, 36% 7%, 56% 8%, 76% 18%, 92% 37%,
+        95% 57%, 87% 74%, 69% 88%, 47% 95%, 24% 92%, 11% 79%, 4% 58%
+      );
+      background:
+        linear-gradient(155deg, #d4d7da 0%, #b3b8bc 22%, #939ba2 48%, #737a81 76%, #5d646a 100%);
+      box-shadow:
+        inset 20px 16px 18px rgba(255,255,255,0.24),
+        inset -18px -18px 22px rgba(0,0,0,0.22),
+        0 16px 28px rgba(0,0,0,0.26);
     }
 
     .rock::before {
       content: "";
       position: absolute;
-      inset: 12px 22px 28px 18px;
+      inset: 16px 18px 18px 16px;
+      clip-path: polygon(
+        8% 35%, 22% 18%, 46% 10%, 73% 18%, 87% 33%, 79% 48%,
+        58% 54%, 35% 48%, 18% 50%
+      );
       background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0));
-      clip-path: polygon(10% 18%, 34% 8%, 62% 14%, 86% 34%, 76% 60%, 44% 58%, 18% 48%);
-      opacity: 0.8;
+      opacity: 0.9;
+    }
+
+    .rock::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 28% 36%, rgba(255,255,255,0.12), transparent 16%),
+        radial-gradient(circle at 66% 62%, rgba(0,0,0,0.12), transparent 18%),
+        linear-gradient(120deg, transparent 0 44%, rgba(78,86,92,0.22) 45% 47%, transparent 48% 100%);
+      mix-blend-mode: multiply;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .rock-shadow {
+      position: absolute;
+      left: 52px;
+      top: 236px;
+      width: 180px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.36), rgba(0,0,0,0) 72%);
+      transform: rotate(-7deg);
+      filter: blur(2px);
+      opacity: 0.9;
     }
 
     .plant-cluster {
       position: absolute;
-      right: 74px;
-      top: 68px;
-      width: 170px;
+      right: 56px;
+      top: 106px;
+      width: 188px;
       height: 170px;
     }
 
-    .reed {
+    .blade {
       position: absolute;
       bottom: 0;
-      width: 18px;
-      border-radius: 999px 999px 10px 10px;
-      background: linear-gradient(180deg, #9fd46e 0%, #77b24e 45%, #4e7a34 100%);
+      border-radius: 999px 999px 8px 8px;
+      background: linear-gradient(180deg, #a6da78 0%, #84bf59 45%, #5f913f 75%, #4b7334 100%);
       transform-origin: bottom center;
-      box-shadow: inset 3px 0 4px rgba(255,255,255,0.18);
+      box-shadow:
+        inset 2px 0 4px rgba(255,255,255,0.14),
+        0 2px 5px rgba(0,0,0,0.10);
     }
 
-    .reed.r1 { height: 122px; left: 18px; transform: rotate(-17deg); }
-    .reed.r2 { height: 102px; left: 42px; transform: rotate(-8deg); }
-    .reed.r3 { height: 138px; left: 66px; transform: rotate(-1deg); }
-    .reed.r4 { height: 118px; left: 90px; transform: rotate(9deg); }
-    .reed.r5 { height: 146px; left: 118px; transform: rotate(14deg); }
-    .reed.r6 { height: 92px; left: 78px; transform: rotate(-19deg); }
+    .blade::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 12%;
+      width: 1px;
+      height: 72%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.14);
+      opacity: 0.6;
+    }
+
+    .b1 { left: 12px;  width: 11px; height: 88px;  transform: rotate(-26deg); }
+    .b2 { left: 26px;  width: 13px; height: 120px; transform: rotate(-20deg); }
+    .b3 { left: 48px;  width: 12px; height: 105px; transform: rotate(-9deg); }
+    .b4 { left: 66px;  width: 14px; height: 138px; transform: rotate(-2deg); }
+    .b5 { left: 88px;  width: 13px; height: 116px; transform: rotate(7deg); }
+    .b6 { left: 108px; width: 15px; height: 148px; transform: rotate(14deg); }
+    .b7 { left: 130px; width: 12px; height: 100px; transform: rotate(22deg); }
+    .b8 { left: 148px; width: 11px; height: 82px;  transform: rotate(28deg); }
+    .b9 { left: 74px;  width: 10px; height: 92px;  transform: rotate(-18deg); }
+    .b10{ left: 118px; width: 10px; height: 96px;  transform: rotate(18deg); }
+
+    .plant-shadow {
+      position: absolute;
+      right: 72px;
+      top: 240px;
+      width: 130px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.30), rgba(0,0,0,0) 72%);
+      filter: blur(2px);
+      opacity: 0.8;
+    }
 
     .water-feature {
       position: absolute;
       left: 50%;
-      top: 120px;
-      width: 240px;
+      top: 136px;
+      width: 250px;
       height: 170px;
       transform: translateX(-50%);
       pointer-events: none;
@@ -280,9 +364,9 @@
       left: 50%;
       top: 0;
       width: 4px;
-      height: 78px;
+      height: 82px;
       transform: translateX(-50%);
-      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(191,247,255,0.95));
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(191,247,255,0.96));
       opacity: 0;
       border-radius: 999px;
       animation: dripTrail 8s infinite ease-in-out;
@@ -305,7 +389,7 @@
     .impact-glow {
       position: absolute;
       left: 50%;
-      top: 108px;
+      top: 110px;
       width: 38px;
       height: 38px;
       transform: translate(-50%, -50%);
@@ -318,20 +402,20 @@
     .surface-line {
       position: absolute;
       left: 50%;
-      top: 108px;
-      width: 120px;
+      top: 110px;
+      width: 124px;
       height: 4px;
       transform: translate(-50%, -50%);
       border-radius: 999px;
-      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(193,248,255,0.85), rgba(255,255,255,0));
-      opacity: 0.65;
-      filter: blur(0.3px);
+      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(193,248,255,0.88), rgba(255,255,255,0));
+      opacity: 0.72;
+      filter: blur(0.2px);
     }
 
-    .ripple-title {
+    .ripple-ring {
       position: absolute;
       left: 50%;
-      top: 108px;
+      top: 110px;
       transform: translate(-50%, -50%) scale(0.25);
       border: 2px solid rgba(191,247,255,0.58);
       border-radius: 50%;
@@ -339,19 +423,19 @@
       box-shadow: 0 0 20px rgba(57,198,214,0.18);
     }
 
-    .ripple-title.one {
+    .ripple-ring.one {
       width: 92px;
       height: 22px;
       animation: rippleExpand 8s infinite ease-out;
     }
 
-    .ripple-title.two {
+    .ripple-ring.two {
       width: 150px;
       height: 34px;
       animation: rippleExpandTwo 8s infinite ease-out;
     }
 
-    .ripple-title.three {
+    .ripple-ring.three {
       width: 210px;
       height: 48px;
       animation: rippleExpandThree 8s infinite ease-out;
@@ -368,11 +452,11 @@
       }
       32% {
         opacity: 0.95;
-        height: 80px;
+        height: 82px;
       }
       38% {
         opacity: 0;
-        height: 80px;
+        height: 82px;
       }
     }
 
@@ -387,11 +471,11 @@
       }
       34% {
         opacity: 1;
-        top: 92px;
+        top: 94px;
       }
       38% {
         opacity: 0;
-        top: 108px;
+        top: 110px;
       }
     }
 
@@ -661,7 +745,7 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--sand);
+      background: #f4e7c5;
       color: #14332d;
       font-weight: 900;
     }
@@ -819,10 +903,6 @@
         padding-top: 34px;
       }
 
-      .pond-art {
-        min-height: 430px;
-      }
-
       .cards {
         grid-template-columns: 1fr;
       }
@@ -879,26 +959,51 @@
       }
 
       .pond-art {
-        min-height: 460px;
+        min-height: 500px;
+      }
+
+      .scene-ground {
+        left: 24px;
+        right: 24px;
+        bottom: 74px;
+        height: 74px;
+      }
+
+      .shore-shadow {
+        left: 28px;
+        right: 28px;
+        bottom: 84px;
       }
 
       .rock {
-        left: 34px;
-        top: 72px;
-        width: 160px;
-        height: 104px;
+        left: 26px;
+        top: 148px;
+        width: 170px;
+        height: 108px;
+      }
+
+      .rock-shadow {
+        left: 38px;
+        top: 238px;
+        width: 144px;
       }
 
       .plant-cluster {
-        right: 42px;
-        top: 66px;
-        width: 132px;
-        height: 154px;
+        right: 24px;
+        top: 120px;
+        width: 148px;
+        height: 148px;
+      }
+
+      .plant-shadow {
+        right: 32px;
+        top: 244px;
+        width: 108px;
       }
 
       .water-feature {
-        top: 116px;
-        width: 190px;
+        top: 152px;
+        width: 180px;
       }
 
       .gallery {
@@ -945,7 +1050,7 @@
 
         <div class="logo-text">
           <div class="logo-title">Jerry's Ponds LLC</div>
-          <div class="logo-subtitle">Custom pond building in the Tri-Cities area</div>
+          <div class="logo-subtitle">Custom pond building in the Tri-Cities Washington area</div>
         </div>
       </a>
 
@@ -975,25 +1080,34 @@
 
       <div class="pond-art" aria-label="Artistic pond graphic">
         <div class="pond-scene-top">
+          <div class="scene-ground"></div>
+          <div class="shore-shadow"></div>
+
           <div class="rock"></div>
+          <div class="rock-shadow"></div>
 
           <div class="plant-cluster">
-            <div class="reed r1"></div>
-            <div class="reed r2"></div>
-            <div class="reed r3"></div>
-            <div class="reed r4"></div>
-            <div class="reed r5"></div>
-            <div class="reed r6"></div>
+            <div class="blade b1"></div>
+            <div class="blade b2"></div>
+            <div class="blade b3"></div>
+            <div class="blade b4"></div>
+            <div class="blade b5"></div>
+            <div class="blade b6"></div>
+            <div class="blade b7"></div>
+            <div class="blade b8"></div>
+            <div class="blade b9"></div>
+            <div class="blade b10"></div>
           </div>
+          <div class="plant-shadow"></div>
 
           <div class="water-feature" aria-hidden="true">
             <div class="drop-trail"></div>
             <div class="drop"></div>
             <div class="impact-glow"></div>
             <div class="surface-line"></div>
-            <div class="ripple-title one"></div>
-            <div class="ripple-title two"></div>
-            <div class="ripple-title three"></div>
+            <div class="ripple-ring one"></div>
+            <div class="ripple-ring two"></div>
+            <div class="ripple-ring three"></div>
           </div>
         </div>
 
@@ -1159,7 +1273,7 @@
   </main>
 
   <footer>
-    © 2026 Jerry's Ponds LLC · Custom artistic ponds in the Tri-Cities area
+    © 2026 Jerry's Ponds LLC · Custom artistic ponds in the Tri-Cities Washinton area
   </footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
