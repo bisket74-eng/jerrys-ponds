@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Jerry's Ponds LLC | Artistic Pond Design in the Tri-Cities Area</title>
+  <title>Jerry's Ponds LLC | Artistic Pond Design in the Tri-Cities Washington Area</title>
 
   <style>
     :root {
       --deep: #082f33;
       --pond: #0b5d63;
       --water: #39c6d6;
+      --water2: #63e0ee;
       --moss: #8fc46c;
+      --moss-dark: #4b7f35;
       --sand: #f4e7c5;
       --cream: #fffaf0;
       --shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
@@ -170,20 +171,11 @@
       gap: 52px;
     }
 
-    .title-water-wrap {
-      position: relative;
-      display: inline-block;
-      padding-top: 28px;
-      overflow: visible;
-    }
-
     h1 {
       margin: 0;
       font-size: clamp(3rem, 7vw, 6.8rem);
       line-height: 0.9;
       letter-spacing: -4px;
-      position: relative;
-      z-index: 2;
     }
 
     .gradient-text {
@@ -191,220 +183,6 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-    }
-
-    .title-water-effect {
-      position: absolute;
-      left: 50%;
-      top: -18px;
-      width: 340px;
-      height: 240px;
-      transform: translateX(-50%);
-      pointer-events: none;
-      z-index: 4;
-      overflow: visible;
-    }
-
-    .drop-trail {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 3px;
-      height: 62px;
-      transform: translateX(-50%);
-      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(191,247,255,0.95));
-      opacity: 0;
-      border-radius: 999px;
-      animation: dripTrail 8s infinite ease-in-out;
-    }
-
-    .drop {
-      position: absolute;
-      left: 50%;
-      top: 8px;
-      width: 18px;
-      height: 24px;
-      transform: translateX(-50%);
-      background: radial-gradient(circle at 35% 30%, #ffffff 0 14%, #94f0ff 18%, #3cc8d8 64%, #148792 100%);
-      border-radius: 50% 50% 55% 55% / 42% 42% 65% 65%;
-      clip-path: polygon(50% 0%, 74% 34%, 87% 63%, 75% 88%, 50% 100%, 25% 88%, 13% 63%, 26% 34%);
-      box-shadow: 0 0 16px rgba(57,198,214,0.45);
-      opacity: 0;
-      animation: dripDrop 8s infinite ease-in-out;
-    }
-
-    .impact-glow {
-      position: absolute;
-      left: 50%;
-      top: 94px;
-      width: 34px;
-      height: 34px;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.85), rgba(57,198,214,0.24) 55%, transparent 72%);
-      opacity: 0;
-      animation: dripImpact 8s infinite ease-in-out;
-    }
-
-    .ripple-title {
-      position: absolute;
-      left: 50%;
-      top: 94px;
-      transform: translate(-50%, -50%) scale(0.25);
-      border: 2px solid rgba(191,247,255,0.58);
-      border-radius: 50%;
-      opacity: 0;
-      box-shadow: 0 0 20px rgba(57,198,214,0.18);
-    }
-
-    .ripple-title.one {
-      width: 105px;
-      height: 28px;
-      animation: rippleExpand 8s infinite ease-out;
-    }
-
-    .ripple-title.two {
-      width: 180px;
-      height: 46px;
-      animation: rippleExpandTwo 8s infinite ease-out;
-    }
-
-    .wave-sheen {
-      position: absolute;
-      left: -20%;
-      top: 42px;
-      width: 140%;
-      height: 120px;
-      background: linear-gradient(
-        90deg,
-        rgba(255,255,255,0) 0%,
-        rgba(191,247,255,0.06) 24%,
-        rgba(255,255,255,0.16) 50%,
-        rgba(191,247,255,0.06) 76%,
-        rgba(255,255,255,0) 100%
-      );
-      filter: blur(2px);
-      opacity: 0;
-      transform: translateX(-22px);
-      animation: waveSweep 8s infinite ease-in-out;
-      border-radius: 999px;
-    }
-
-    @keyframes dripTrail {
-      0%, 18%, 100% {
-        opacity: 0;
-        height: 0;
-      }
-
-      24% {
-        opacity: 0.8;
-        height: 28px;
-      }
-
-      32% {
-        opacity: 0.9;
-        height: 62px;
-      }
-
-      38% {
-        opacity: 0;
-        height: 62px;
-      }
-    }
-
-    @keyframes dripDrop {
-      0%, 18%, 100% {
-        opacity: 0;
-        top: 8px;
-      }
-
-      22% {
-        opacity: 1;
-        top: 8px;
-      }
-
-      34% {
-        opacity: 1;
-        top: 82px;
-      }
-
-      38% {
-        opacity: 0;
-        top: 94px;
-      }
-    }
-
-    @keyframes dripImpact {
-      0%, 33%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.2);
-      }
-
-      35% {
-        opacity: 0.9;
-        transform: translate(-50%, -50%) scale(1);
-      }
-
-      44% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.8);
-      }
-    }
-
-    @keyframes rippleExpand {
-      0%, 35%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.25);
-      }
-
-      36% {
-        opacity: 0.85;
-        transform: translate(-50%, -50%) scale(0.35);
-      }
-
-      56% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.75);
-      }
-    }
-
-    @keyframes rippleExpandTwo {
-      0%, 38%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.2);
-      }
-
-      42% {
-        opacity: 0.62;
-        transform: translate(-50%, -50%) scale(0.35);
-      }
-
-      66% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.65);
-      }
-    }
-
-    @keyframes waveSweep {
-      0%, 34%, 100% {
-        opacity: 0;
-        transform: translateX(-26px);
-      }
-
-      38% {
-        opacity: 1;
-        transform: translateX(-8px);
-      }
-
-      56% {
-        opacity: 0.55;
-        transform: translateX(18px);
-      }
-
-      68% {
-        opacity: 0;
-        transform: translateX(34px);
-      }
     }
 
     .tagline {
@@ -420,108 +198,261 @@
       min-height: 510px;
       border-radius: 38px;
       background:
-        radial-gradient(circle at 40% 34%, rgba(255,255,255,0.8) 0 2%, transparent 3%),
-        radial-gradient(ellipse at center, #42d3e0 0%, #0d7a80 37%, #08383f 72%);
+        radial-gradient(circle at 47% 42%, rgba(99, 224, 238, 0.55), transparent 26%),
+        radial-gradient(circle at 50% 60%, rgba(57, 198, 214, 0.18), transparent 40%),
+        linear-gradient(180deg, #06323a 0%, #08343f 36%, #0a3f47 100%);
       box-shadow: var(--shadow);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.18);
     }
 
-    .pond-art::before,
-    .pond-art::after {
+    .pond-scene-top {
+      position: absolute;
+      inset: 0 0 150px 0;
+      pointer-events: none;
+    }
+
+    .rock {
+      position: absolute;
+      left: 48px;
+      top: 78px;
+      width: 185px;
+      height: 118px;
+      background: linear-gradient(145deg, #c3c5c8 0%, #8e9499 45%, #6e7479 100%);
+      clip-path: polygon(
+        8% 30%, 18% 14%, 38% 7%, 63% 10%, 82% 21%, 93% 40%,
+        91% 62%, 79% 80%, 58% 91%, 32% 93%, 14% 84%, 5% 62%
+      );
+      border-radius: 18px;
+      box-shadow:
+        inset 18px 12px 20px rgba(255,255,255,0.22),
+        inset -14px -16px 18px rgba(0,0,0,0.22),
+        0 12px 28px rgba(0,0,0,0.28);
+      transform: rotate(-7deg);
+    }
+
+    .rock::before {
       content: "";
       position: absolute;
+      inset: 12px 22px 28px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0));
+      clip-path: polygon(10% 18%, 34% 8%, 62% 14%, 86% 34%, 76% 60%, 44% 58%, 18% 48%);
+      opacity: 0.8;
+    }
+
+    .plant-cluster {
+      position: absolute;
+      right: 74px;
+      top: 68px;
+      width: 170px;
+      height: 170px;
+    }
+
+    .reed {
+      position: absolute;
+      bottom: 0;
+      width: 18px;
+      border-radius: 999px 999px 10px 10px;
+      background: linear-gradient(180deg, #9fd46e 0%, #77b24e 45%, #4e7a34 100%);
+      transform-origin: bottom center;
+      box-shadow: inset 3px 0 4px rgba(255,255,255,0.18);
+    }
+
+    .reed.r1 { height: 122px; left: 18px; transform: rotate(-17deg); }
+    .reed.r2 { height: 102px; left: 42px; transform: rotate(-8deg); }
+    .reed.r3 { height: 138px; left: 66px; transform: rotate(-1deg); }
+    .reed.r4 { height: 118px; left: 90px; transform: rotate(9deg); }
+    .reed.r5 { height: 146px; left: 118px; transform: rotate(14deg); }
+    .reed.r6 { height: 92px; left: 78px; transform: rotate(-19deg); }
+
+    .water-feature {
+      position: absolute;
+      left: 50%;
+      top: 120px;
+      width: 240px;
+      height: 170px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .drop-trail {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 78px;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(191,247,255,0.95));
+      opacity: 0;
+      border-radius: 999px;
+      animation: dripTrail 8s infinite ease-in-out;
+    }
+
+    .drop {
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      width: 20px;
+      height: 28px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle at 35% 28%, #ffffff 0 14%, #94f0ff 20%, #42d3e0 65%, #148792 100%);
+      clip-path: polygon(50% 0%, 75% 36%, 88% 65%, 74% 89%, 50% 100%, 26% 89%, 12% 65%, 25% 36%);
+      box-shadow: 0 0 18px rgba(57,198,214,0.45);
+      opacity: 0;
+      animation: dripDrop 8s infinite ease-in-out;
+    }
+
+    .impact-glow {
+      position: absolute;
+      left: 50%;
+      top: 108px;
+      width: 38px;
+      height: 38px;
+      transform: translate(-50%, -50%);
       border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.28);
-      animation: pondRipple 5s infinite ease-out;
+      background: radial-gradient(circle, rgba(255,255,255,0.85), rgba(57,198,214,0.22) 55%, transparent 72%);
+      opacity: 0;
+      animation: dripImpact 8s infinite ease-in-out;
     }
 
-    .pond-art::before {
-      width: 180px;
-      height: 180px;
-      left: 48%;
-      top: 44%;
-    }
-
-    .pond-art::after {
-      width: 290px;
-      height: 290px;
-      left: 36%;
-      top: 32%;
-      animation-delay: 1.2s;
-    }
-
-    @keyframes pondRipple {
-      0% {
-        transform: scale(0.55);
-        opacity: 0.75;
-      }
-
-      100% {
-        transform: scale(1.7);
-        opacity: 0;
-      }
-    }
-
-    .stone {
+    .surface-line {
       position: absolute;
-      border-radius: 44% 56% 50% 50%;
-      background: linear-gradient(135deg, #d9c69d, #7e8067);
-      box-shadow: inset -12px -14px 24px rgba(0,0,0,0.22);
-    }
-
-    .stone.one {
+      left: 50%;
+      top: 108px;
       width: 120px;
-      height: 82px;
-      left: 32px;
-      top: 54px;
-      transform: rotate(-13deg);
+      height: 4px;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(193,248,255,0.85), rgba(255,255,255,0));
+      opacity: 0.65;
+      filter: blur(0.3px);
     }
 
-    .stone.two {
-      width: 156px;
-      height: 96px;
-      right: 34px;
-      bottom: 72px;
-      transform: rotate(14deg);
-    }
-
-    .stone.three {
-      width: 92px;
-      height: 68px;
-      left: 64px;
-      bottom: 54px;
-      transform: rotate(22deg);
-    }
-
-    .plant {
+    .ripple-title {
       position: absolute;
-      width: 16px;
-      height: 110px;
-      background: linear-gradient(var(--moss), #315d32);
-      border-radius: 999px 999px 0 0;
-      transform-origin: bottom;
-      opacity: 0.9;
+      left: 50%;
+      top: 108px;
+      transform: translate(-50%, -50%) scale(0.25);
+      border: 2px solid rgba(191,247,255,0.58);
+      border-radius: 50%;
+      opacity: 0;
+      box-shadow: 0 0 20px rgba(57,198,214,0.18);
     }
 
-    .plant.a {
-      right: 98px;
-      top: 56px;
-      transform: rotate(-22deg);
+    .ripple-title.one {
+      width: 92px;
+      height: 22px;
+      animation: rippleExpand 8s infinite ease-out;
     }
 
-    .plant.b {
-      right: 70px;
-      top: 72px;
-      transform: rotate(10deg);
-      height: 92px;
+    .ripple-title.two {
+      width: 150px;
+      height: 34px;
+      animation: rippleExpandTwo 8s infinite ease-out;
     }
 
-    .plant.c {
-      right: 128px;
-      top: 86px;
-      transform: rotate(-4deg);
-      height: 76px;
+    .ripple-title.three {
+      width: 210px;
+      height: 48px;
+      animation: rippleExpandThree 8s infinite ease-out;
+    }
+
+    @keyframes dripTrail {
+      0%, 18%, 100% {
+        opacity: 0;
+        height: 0;
+      }
+      24% {
+        opacity: 0.8;
+        height: 38px;
+      }
+      32% {
+        opacity: 0.95;
+        height: 80px;
+      }
+      38% {
+        opacity: 0;
+        height: 80px;
+      }
+    }
+
+    @keyframes dripDrop {
+      0%, 18%, 100% {
+        opacity: 0;
+        top: 8px;
+      }
+      22% {
+        opacity: 1;
+        top: 8px;
+      }
+      34% {
+        opacity: 1;
+        top: 92px;
+      }
+      38% {
+        opacity: 0;
+        top: 108px;
+      }
+    }
+
+    @keyframes dripImpact {
+      0%, 33%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+      }
+      35% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      44% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.8);
+      }
+    }
+
+    @keyframes rippleExpand {
+      0%, 35%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.25);
+      }
+      36% {
+        opacity: 0.88;
+        transform: translate(-50%, -50%) scale(0.35);
+      }
+      56% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.85);
+      }
+    }
+
+    @keyframes rippleExpandTwo {
+      0%, 38%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+      }
+      42% {
+        opacity: 0.65;
+        transform: translate(-50%, -50%) scale(0.35);
+      }
+      66% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.7);
+      }
+    }
+
+    @keyframes rippleExpandThree {
+      0%, 40%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.15);
+      }
+      46% {
+        opacity: 0.42;
+        transform: translate(-50%, -50%) scale(0.3);
+      }
+      72% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.55);
+      }
     }
 
     .floating-card {
@@ -935,21 +866,39 @@
         padding: 28px 16px 46px;
       }
 
-      .title-water-wrap {
-        padding-top: 18px;
-      }
-
-      .title-water-effect {
-        width: 250px;
-        top: -14px;
-      }
-
       h1 {
         letter-spacing: -2px;
       }
 
+      .tagline {
+        margin-top: 18px;
+      }
+
       section {
         padding: 54px 16px;
+      }
+
+      .pond-art {
+        min-height: 460px;
+      }
+
+      .rock {
+        left: 34px;
+        top: 72px;
+        width: 160px;
+        height: 104px;
+      }
+
+      .plant-cluster {
+        right: 42px;
+        top: 66px;
+        width: 132px;
+        height: 154px;
+      }
+
+      .water-feature {
+        top: 116px;
+        width: 190px;
       }
 
       .gallery {
@@ -1013,22 +962,11 @@
   <main>
     <section class="hero">
       <div>
-        <div class="title-water-wrap">
-          <div class="title-water-effect" aria-hidden="true">
-            <div class="drop-trail"></div>
-            <div class="drop"></div>
-            <div class="impact-glow"></div>
-            <div class="ripple-title one"></div>
-            <div class="ripple-title two"></div>
-            <div class="wave-sheen"></div>
-          </div>
-
-          <h1>
-            Water, stone, and<br />
-            art in perfect<br />
-            <span class="gradient-text">motion.</span>
-          </h1>
-        </div>
+        <h1>
+          Water, stone, and<br />
+          art in perfect<br />
+          <span class="gradient-text">motion.</span>
+        </h1>
 
         <p class="tagline">
           Jerry's Ponds LLC designs and builds creative, one-of-a-kind ponds that turn ordinary outdoor spaces into living artwork.
@@ -1036,13 +974,28 @@
       </div>
 
       <div class="pond-art" aria-label="Artistic pond graphic">
-        <div class="stone one"></div>
-        <div class="stone two"></div>
-        <div class="stone three"></div>
+        <div class="pond-scene-top">
+          <div class="rock"></div>
 
-        <div class="plant a"></div>
-        <div class="plant b"></div>
-        <div class="plant c"></div>
+          <div class="plant-cluster">
+            <div class="reed r1"></div>
+            <div class="reed r2"></div>
+            <div class="reed r3"></div>
+            <div class="reed r4"></div>
+            <div class="reed r5"></div>
+            <div class="reed r6"></div>
+          </div>
+
+          <div class="water-feature" aria-hidden="true">
+            <div class="drop-trail"></div>
+            <div class="drop"></div>
+            <div class="impact-glow"></div>
+            <div class="surface-line"></div>
+            <div class="ripple-title one"></div>
+            <div class="ripple-title two"></div>
+            <div class="ripple-title three"></div>
+          </div>
+        </div>
 
         <div class="floating-card">
           <h2>Built like nature. Finished like art.</h2>
