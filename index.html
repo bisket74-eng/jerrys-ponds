@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jerry's Ponds LLC | Artistic Pond Design in Richland, WA</title>
+
+  <title>Jerry's Ponds LLC | Artistic Pond Design in the Tri-Cities Area</title>
 
   <style>
     :root {
@@ -72,14 +73,14 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(6, 31, 36, 0.78);
+      background: rgba(6, 31, 36, 0.82);
       border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
     .nav {
       max-width: 1180px;
       margin: auto;
-      padding: 16px 22px;
+      padding: 18px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -89,29 +90,52 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-      font-size: 1.05rem;
+      gap: 14px;
     }
 
     .logo-mark {
-      width: 42px;
-      height: 42px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 35%, #ffffff 0 6%, transparent 7%),
         radial-gradient(circle at 45% 45%, var(--water), var(--pond) 58%, var(--moss));
-      box-shadow: 0 0 28px rgba(57, 198, 214, 0.45);
+      box-shadow: 0 0 32px rgba(57, 198, 214, 0.55);
       position: relative;
+      flex: 0 0 auto;
     }
 
     .logo-mark::after {
       content: "";
       position: absolute;
-      inset: 9px;
+      inset: 11px;
       border-radius: 50%;
       border: 2px solid rgba(255,255,255,0.45);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      line-height: 1.05;
+    }
+
+    .logo-title {
+      font-size: clamp(1.75rem, 4.5vw, 3rem);
+      font-weight: 950;
+      letter-spacing: -1.3px;
+      background: linear-gradient(135deg, #ffffff, #bff7ff 42%, #bdf09a 76%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-subtitle {
+      font-size: clamp(0.82rem, 2.2vw, 1rem);
+      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 800;
     }
 
     nav {
@@ -120,6 +144,7 @@
       align-items: center;
       font-size: 0.92rem;
       color: rgba(255,255,255,0.82);
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -311,9 +336,25 @@
       opacity: 0.9;
     }
 
-    .plant.a { right: 98px; top: 56px; transform: rotate(-22deg); }
-    .plant.b { right: 70px; top: 72px; transform: rotate(10deg); height: 92px; }
-    .plant.c { right: 128px; top: 86px; transform: rotate(-4deg); height: 76px; }
+    .plant.a {
+      right: 98px;
+      top: 56px;
+      transform: rotate(-22deg);
+    }
+
+    .plant.b {
+      right: 70px;
+      top: 72px;
+      transform: rotate(10deg);
+      height: 92px;
+    }
+
+    .plant.c {
+      right: 128px;
+      top: 86px;
+      transform: rotate(-4deg);
+      height: 76px;
+    }
 
     .floating-card {
       position: absolute;
@@ -616,11 +657,27 @@
 
     @media (max-width: 560px) {
       .nav {
-        padding: 14px 16px;
+        padding: 18px 16px;
+        align-items: flex-start;
       }
 
       .logo {
-        font-size: 0.95rem;
+        gap: 12px;
+      }
+
+      .logo-mark {
+        width: 54px;
+        height: 54px;
+      }
+
+      .logo-title {
+        font-size: 1.65rem;
+        letter-spacing: -0.8px;
+      }
+
+      .logo-subtitle {
+        font-size: 0.72rem;
+        line-height: 1.25;
       }
 
       h1 {
@@ -664,7 +721,11 @@
     <div class="nav">
       <a class="logo" href="#">
         <div class="logo-mark"></div>
-        <div>Jerry's Ponds LLC</div>
+
+        <div class="logo-text">
+          <div class="logo-title">Jerry's Ponds LLC</div>
+          <div class="logo-subtitle">Custom pond building in the Tri-Cities area</div>
+        </div>
       </a>
 
       <nav>
@@ -682,12 +743,12 @@
       <div>
         <div class="eyebrow">
           <span class="pulse-dot"></span>
-          Custom pond building in Richland, Washington
+          Custom pond building in the Tri-Cities area
         </div>
 
         <h1>
-          Water, stone, and art in
-          <span class="gradient-text">perfect motion.</span>
+          Water, stone, and art in perfect
+          <span class="gradient-text">motion.</span>
         </h1>
 
         <p class="tagline">
@@ -832,6 +893,14 @@
         </div>
 
         <div class="contact-links">
+          <div class="contact-link">
+            <div>
+              <span>Owner</span>
+              <div>Jerry Daudert</div>
+            </div>
+            <div>✦</div>
+          </div>
+
           <a class="contact-link" href="tel:5555555555">
             <div>
               <span>Phone</span>
@@ -861,7 +930,7 @@
   </main>
 
   <footer>
-    © 2026 Jerry's Ponds LLC · Custom artistic ponds in Richland, WA
+    © 2026 Jerry's Ponds LLC · Custom artistic ponds in the Tri-Cities area
   </footer>
 </body>
 </html>
