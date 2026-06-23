@@ -202,54 +202,58 @@
       pointer-events: none;
     }
 
-    .pond-ripple {
-      position: absolute;
-      left: 55%;
-      top: 58%;
-      width: 110px;
-      height: 46px;
-      border-radius: 50%;
-      border: 2px solid rgba(210, 250, 255, 0.68);
-      box-shadow:
-        0 0 18px rgba(120, 230, 245, 0.22),
-        inset 0 0 16px rgba(255, 255, 255, 0.10);
-      transform: translate(-50%, -50%) scale(0.18);
-      opacity: 0;
-      z-index: 5;
-      pointer-events: none;
-      mix-blend-mode: screen;
-      animation: pondRippleOut 5s ease-out infinite;
-    }
+.pond-ripple {
+  position: absolute;
+  left: 50%;
+  top: 77%;
+  width: 95px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.4px solid rgba(210, 250, 255, 0.42);
+  box-shadow:
+    0 0 12px rgba(120, 230, 245, 0.14),
+    inset 0 0 10px rgba(255, 255, 255, 0.06);
+  transform: translate(-50%, -50%) scale(0.16);
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: pondRippleOut 5s ease-out infinite;
+}
 
-    .pond-ripple.r2 {
-      animation-delay: 0.35s;
-      border-color: rgba(185, 245, 255, 0.48);
-    }
+.pond-ripple.r2 {
+  animation-delay: 0.38s;
+  border-color: rgba(185, 245, 255, 0.30);
+}
 
-    .pond-ripple.r3 {
-      animation-delay: 0.7s;
-      border-color: rgba(255, 255, 255, 0.32);
-    }
+.pond-ripple.r3 {
+  animation-delay: 0.76s;
+  border-color: rgba(255, 255, 255, 0.18);
+}
 
     @keyframes pondRippleOut {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.18);
-      }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.16);
+  }
 
-      9% {
-        opacity: 0.85;
-      }
+  8% {
+    opacity: 0.45;
+  }
 
-      55% {
-        opacity: 0.32;
-      }
+  32% {
+    opacity: 0.24;
+  }
 
-      100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(8.5);
-      }
-    }
+  62% {
+    opacity: 0.08;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(7.8);
+  }
+}
 
     .floating-card {
       position: absolute;
