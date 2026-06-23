@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Jerry's Ponds LLC | Artistic Pond Design in the Tri-Cities Area</title>
 
   <style>
@@ -193,10 +192,10 @@
 
     .pond-art {
       position: relative;
-      min-height: 545px;
+      min-height: 560px;
       border-radius: 38px;
       background:
-        radial-gradient(circle at 48% 38%, rgba(99, 224, 238, 0.42), transparent 24%),
+        radial-gradient(circle at 48% 34%, rgba(99, 224, 238, 0.42), transparent 24%),
         linear-gradient(180deg, #052d34 0%, #073640 45%, #082d33 100%);
       box-shadow: var(--shadow);
       overflow: hidden;
@@ -212,229 +211,75 @@
     }
 
     .stacked-stone {
-      filter: drop-shadow(0 8px 10px rgba(0,0,0,0.28));
+      filter: drop-shadow(0 8px 10px rgba(0,0,0,0.25));
     }
 
-    .falls-main {
-      animation: fallsPulse 3s ease-in-out infinite;
+    .falls-body {
+      animation: waterfallBody 2.4s ease-in-out infinite;
       transform-origin: center top;
     }
 
-    .falls-stream1,
-    .falls-stream2,
-    .falls-stream3 {
-      animation: streamShift 1.6s linear infinite;
+    .falls-line-a,
+    .falls-line-b,
+    .falls-line-c,
+    .falls-line-d {
+      animation: waterfallLine 1.4s linear infinite;
       transform-origin: center top;
     }
 
-    .falls-stream2 {
-      animation-delay: 0.25s;
-    }
-
-    .falls-stream3 {
-      animation-delay: 0.5s;
-    }
+    .falls-line-b { animation-delay: 0.18s; }
+    .falls-line-c { animation-delay: 0.35s; }
+    .falls-line-d { animation-delay: 0.5s; }
 
     .falls-foam {
-      animation: foamPulse 2.2s ease-in-out infinite;
+      animation: waterfallFoam 2s ease-in-out infinite;
       transform-origin: center center;
     }
 
-    @keyframes fallsPulse {
-      0%, 100% { opacity: 0.92; }
+    .falls-mist {
+      animation: waterfallMist 2.3s ease-in-out infinite;
+      transform-origin: center center;
+    }
+
+    @keyframes waterfallBody {
+      0%, 100% { opacity: 0.88; }
       50% { opacity: 1; }
     }
 
-    @keyframes streamShift {
+    @keyframes waterfallLine {
       0% {
-        opacity: 0.38;
-        transform: translateY(-1px);
+        opacity: 0.35;
+        transform: translateY(-2px);
       }
       50% {
         opacity: 0.82;
-        transform: translateY(2px);
+        transform: translateY(3px);
       }
       100% {
-        opacity: 0.38;
-        transform: translateY(5px);
+        opacity: 0.35;
+        transform: translateY(8px);
       }
     }
 
-    @keyframes foamPulse {
+    @keyframes waterfallFoam {
       0%, 100% {
-        opacity: 0.78;
+        opacity: 0.8;
         transform: scale(1);
       }
       50% {
         opacity: 1;
-        transform: scale(1.06);
+        transform: scale(1.08);
       }
     }
 
-    .water-feature {
-      position: absolute;
-      left: 52%;
-      top: 135px;
-      width: 250px;
-      height: 180px;
-      transform: translateX(-50%);
-      pointer-events: none;
-      z-index: 5;
-    }
-
-    .drop-trail {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 4px;
-      height: 82px;
-      transform: translateX(-50%);
-      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(191,247,255,0.96));
-      opacity: 0;
-      border-radius: 999px;
-      animation: dripTrail 8s infinite ease-in-out;
-    }
-
-    .drop {
-      position: absolute;
-      left: 50%;
-      top: 8px;
-      width: 20px;
-      height: 28px;
-      transform: translateX(-50%);
-      background: radial-gradient(circle at 35% 28%, #ffffff 0 14%, #94f0ff 20%, #42d3e0 65%, #148792 100%);
-      clip-path: polygon(50% 0%, 75% 36%, 88% 65%, 74% 89%, 50% 100%, 26% 89%, 12% 65%, 25% 36%);
-      box-shadow: 0 0 18px rgba(57,198,214,0.45);
-      opacity: 0;
-      animation: dripDrop 8s infinite ease-in-out;
-    }
-
-    .impact-glow {
-      position: absolute;
-      left: 50%;
-      top: 112px;
-      width: 38px;
-      height: 38px;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.85), rgba(57,198,214,0.22) 55%, transparent 72%);
-      opacity: 0;
-      animation: dripImpact 8s infinite ease-in-out;
-    }
-
-    .surface-line {
-      position: absolute;
-      left: 50%;
-      top: 112px;
-      width: 130px;
-      height: 4px;
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(193,248,255,0.88), rgba(255,255,255,0));
-      opacity: 0.65;
-      filter: blur(0.2px);
-    }
-
-    .ripple-ring {
-      position: absolute;
-      left: 50%;
-      top: 112px;
-      transform: translate(-50%, -50%) scale(0.25);
-      border: 2px solid rgba(191,247,255,0.58);
-      border-radius: 50%;
-      opacity: 0;
-      box-shadow: 0 0 20px rgba(57,198,214,0.18);
-    }
-
-    .ripple-ring.one {
-      width: 92px;
-      height: 22px;
-      animation: rippleExpand 8s infinite ease-out;
-    }
-
-    .ripple-ring.two {
-      width: 150px;
-      height: 34px;
-      animation: rippleExpandTwo 8s infinite ease-out;
-    }
-
-    .ripple-ring.three {
-      width: 210px;
-      height: 48px;
-      animation: rippleExpandThree 8s infinite ease-out;
-    }
-
-    @keyframes dripTrail {
-      0%, 18%, 100% { opacity: 0; height: 0; }
-      24% { opacity: 0.8; height: 38px; }
-      32% { opacity: 0.95; height: 82px; }
-      38% { opacity: 0; height: 82px; }
-    }
-
-    @keyframes dripDrop {
-      0%, 18%, 100% { opacity: 0; top: 8px; }
-      22% { opacity: 1; top: 8px; }
-      34% { opacity: 1; top: 96px; }
-      38% { opacity: 0; top: 112px; }
-    }
-
-    @keyframes dripImpact {
-      0%, 33%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.2);
+    @keyframes waterfallMist {
+      0%, 100% {
+        opacity: 0.35;
+        transform: translateY(0);
       }
-      35% {
-        opacity: 0.9;
-        transform: translate(-50%, -50%) scale(1);
-      }
-      44% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.8);
-      }
-    }
-
-    @keyframes rippleExpand {
-      0%, 35%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.25);
-      }
-      36% {
-        opacity: 0.88;
-        transform: translate(-50%, -50%) scale(0.35);
-      }
-      56% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.85);
-      }
-    }
-
-    @keyframes rippleExpandTwo {
-      0%, 38%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.2);
-      }
-      42% {
+      50% {
         opacity: 0.65;
-        transform: translate(-50%, -50%) scale(0.35);
-      }
-      66% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.7);
-      }
-    }
-
-    @keyframes rippleExpandThree {
-      0%, 40%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.15);
-      }
-      46% {
-        opacity: 0.42;
-        transform: translate(-50%, -50%) scale(0.3);
-      }
-      72% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.55);
+        transform: translateY(-2px);
       }
     }
 
@@ -855,13 +700,7 @@
       }
 
       .pond-art {
-        min-height: 520px;
-      }
-
-      .water-feature {
-        top: 145px;
-        left: 52%;
-        width: 190px;
+        min-height: 540px;
       }
 
       .gallery {
@@ -905,7 +744,6 @@
     <div class="nav">
       <a class="logo" href="#">
         <div class="logo-mark"></div>
-
         <div class="logo-text">
           <div class="logo-title">Jerry's Ponds LLC</div>
           <div class="logo-subtitle">Custom pond building in the Tri-Cities area</div>
@@ -940,265 +778,299 @@
         <svg class="pond-svg" viewBox="0 0 680 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <radialGradient id="waterGrad" cx="50%" cy="42%" r="68%">
-              <stop offset="0%" stop-color="#65e6f3" stop-opacity="0.95"/>
-              <stop offset="38%" stop-color="#1595a4" stop-opacity="0.92"/>
-              <stop offset="78%" stop-color="#07515c" stop-opacity="0.98"/>
-              <stop offset="100%" stop-color="#06343d" stop-opacity="1"/>
+              <stop offset="0%" stop-color="#65e6f3" stop-opacity="0.95"></stop>
+              <stop offset="38%" stop-color="#1595a4" stop-opacity="0.92"></stop>
+              <stop offset="78%" stop-color="#07515c" stop-opacity="0.98"></stop>
+              <stop offset="100%" stop-color="#06343d" stop-opacity="1"></stop>
             </radialGradient>
 
             <linearGradient id="shoreGrad" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stop-color="#8da46b"/>
-              <stop offset="38%" stop-color="#6f7c57"/>
-              <stop offset="72%" stop-color="#394b39"/>
-              <stop offset="100%" stop-color="#1f332f"/>
+              <stop offset="0%" stop-color="#8da46b"></stop>
+              <stop offset="38%" stop-color="#6f7c57"></stop>
+              <stop offset="72%" stop-color="#394b39"></stop>
+              <stop offset="100%" stop-color="#1f332f"></stop>
             </linearGradient>
 
             <linearGradient id="rockGrad" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stop-color="#d0d3d5"/>
-              <stop offset="25%" stop-color="#aeb4b8"/>
-              <stop offset="52%" stop-color="#858d94"/>
-              <stop offset="78%" stop-color="#626970"/>
-              <stop offset="100%" stop-color="#444b51"/>
+              <stop offset="0%" stop-color="#d0d3d5"></stop>
+              <stop offset="25%" stop-color="#aeb4b8"></stop>
+              <stop offset="52%" stop-color="#858d94"></stop>
+              <stop offset="78%" stop-color="#626970"></stop>
+              <stop offset="100%" stop-color="#444b51"></stop>
             </linearGradient>
 
             <linearGradient id="rockGradDark" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stop-color="#b9bec2"/>
-              <stop offset="35%" stop-color="#8d949a"/>
-              <stop offset="70%" stop-color="#686f76"/>
-              <stop offset="100%" stop-color="#41474d"/>
+              <stop offset="0%" stop-color="#bcc1c6"></stop>
+              <stop offset="35%" stop-color="#8a9198"></stop>
+              <stop offset="70%" stop-color="#656c73"></stop>
+              <stop offset="100%" stop-color="#3d4348"></stop>
             </linearGradient>
 
             <linearGradient id="reedGrad" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stop-color="#b0dc7e"/>
-              <stop offset="48%" stop-color="#78a957"/>
-              <stop offset="100%" stop-color="#3f6c39"/>
+              <stop offset="0%" stop-color="#b0dc7e"></stop>
+              <stop offset="48%" stop-color="#78a957"></stop>
+              <stop offset="100%" stop-color="#3f6c39"></stop>
             </linearGradient>
 
             <linearGradient id="waterfallGrad" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stop-color="rgba(220,252,255,0.96)"/>
-              <stop offset="40%" stop-color="rgba(144,235,247,0.90)"/>
-              <stop offset="100%" stop-color="rgba(44,177,197,0.84)"/>
+              <stop offset="0%" stop-color="#ddfcff" stop-opacity="0.97"></stop>
+              <stop offset="42%" stop-color="#9cecf7" stop-opacity="0.92"></stop>
+              <stop offset="100%" stop-color="#4bc6dc" stop-opacity="0.84"></stop>
             </linearGradient>
 
             <radialGradient id="foamGrad" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="rgba(255,255,255,0.98)"/>
-              <stop offset="55%" stop-color="rgba(202,246,255,0.74)"/>
-              <stop offset="100%" stop-color="rgba(202,246,255,0)"/>
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"></stop>
+              <stop offset="55%" stop-color="#d5f8ff" stop-opacity="0.72"></stop>
+              <stop offset="100%" stop-color="#d5f8ff" stop-opacity="0"></stop>
             </radialGradient>
           </defs>
 
-          <rect width="680" height="560" fill="transparent"/>
-
-          <!-- Shore -->
-          <path
-            d="M60 266 C88 210 154 178 242 185 C318 190 362 150 438 164 C541 184 620 244 633 333 C646 425 570 486 452 499 C339 511 194 493 114 428 C54 378 35 323 60 266Z"
-            fill="url(#shoreGrad)"
-            opacity="0.95"
-          />
-
-          <!-- Pond water -->
-          <path
-            d="M90 282 C120 231 179 207 257 212 C323 216 368 182 435 194 C523 210 587 264 596 333 C606 407 543 456 445 467 C347 478 223 461 153 410 C98 369 70 323 90 282Z"
-            fill="url(#waterGrad)"
-            opacity="0.98"
-          />
-
-          <!-- Water highlights -->
-          <path
-            d="M117 300 C169 268 232 269 294 282 C360 296 421 275 484 283 C526 289 555 305 574 331"
-            fill="none"
-            stroke="rgba(198,249,255,0.32)"
-            stroke-width="5"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M153 374 C224 404 306 407 381 396 C457 385 514 394 554 423"
-            fill="none"
-            stroke="rgba(198,249,255,0.20)"
-            stroke-width="4"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M108 438 C189 487 341 497 455 480"
-            fill="none"
-            stroke="rgba(255,255,255,0.11)"
-            stroke-width="3"
-            stroke-linecap="round"
-          />
-
-          <!-- Left rock shadow -->
-          <ellipse cx="203" cy="445" rx="80" ry="18" fill="rgba(0,0,0,0.25)"/>
-
-          <!-- Left big rock -->
-          <path
-            d="M60 270 L79 230 L112 205 L157 190 L204 198 L239 221 L254 258 L242 297 L207 322 L153 335 L103 326 L70 302 Z"
-            fill="url(#rockGrad)"
-          />
-          <path
-            d="M88 244 L122 222 L170 213 L212 226"
-            fill="none"
-            stroke="rgba(255,255,255,0.22)"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-          <path
-            d="M102 290 L145 278 L180 287 M167 228 L155 257 L190 266 M215 244 L195 266"
-            fill="none"
-            stroke="rgba(48,55,60,0.42)"
-            stroke-width="4"
-            stroke-linecap="round"
-          />
-          <path
-            d="M72 306 L105 326 L153 335 L207 322 L237 302"
-            fill="none"
-            stroke="rgba(0,0,0,0.20)"
-            stroke-width="9"
-            stroke-linecap="round"
-          />
-
-          <!-- Center stacked waterfall stones -->
-          <g class="stacked-stone">
-            <ellipse cx="365" cy="355" rx="58" ry="16" fill="rgba(0,0,0,0.22)"/>
-
-            <!-- bottom stones -->
+          <!-- Move the whole illustrated scene up -->
+          <g transform="translate(0,-58)">
+            <!-- Shore -->
             <path
-              d="M302 262 L329 244 L365 242 L394 252 L406 274 L399 296 L372 309 L334 308 L308 294 L295 279 Z"
-              fill="url(#rockGradDark)"
-            />
-            <path
-              d="M392 256 L423 242 L458 247 L477 267 L470 290 L442 303 L410 300 L390 281 Z"
-              fill="url(#rockGrad)"
+              d="M60 266 C88 210 154 178 242 185 C318 190 362 150 438 164 C541 184 620 244 633 333 C646 425 570 486 452 499 C339 511 194 493 114 428 C54 378 35 323 60 266Z"
+              fill="url(#shoreGrad)"
+              opacity="0.95"
             />
 
-            <!-- middle stones -->
+            <!-- Pond water -->
             <path
-              d="M326 220 L351 206 L383 208 L401 225 L396 245 L370 256 L337 252 L320 237 Z"
-              fill="url(#rockGrad)"
-            />
-            <path
-              d="M388 217 L413 205 L441 208 L459 223 L453 242 L430 252 L398 248 L382 233 Z"
-              fill="url(#rockGradDark)"
+              d="M90 282 C120 231 179 207 257 212 C323 216 368 182 435 194 C523 210 587 264 596 333 C606 407 543 456 445 467 C347 478 223 461 153 410 C98 369 70 323 90 282Z"
+              fill="url(#waterGrad)"
+              opacity="0.98"
             />
 
-            <!-- top cap stones -->
+            <!-- Water highlights -->
             <path
-              d="M350 186 L376 175 L403 179 L417 193 L413 208 L389 217 L360 214 L347 201 Z"
-              fill="url(#rockGrad)"
-            />
-            <path
-              d="M391 182 L414 173 L438 176 L450 188 L447 201 L427 210 L402 208 L390 197 Z"
-              fill="url(#rockGradDark)"
-            />
-
-            <!-- highlights -->
-            <path
-              d="M315 259 L340 247 L365 247"
+              d="M117 300 C169 268 232 269 294 282 C360 296 421 275 484 283 C526 289 555 305 574 331"
               fill="none"
-              stroke="rgba(255,255,255,0.18)"
+              stroke="rgba(198,249,255,0.32)"
               stroke-width="5"
               stroke-linecap="round"
             />
+
             <path
-              d="M334 221 L351 212 L381 213"
+              d="M153 374 C224 404 306 407 381 396 C457 385 514 394 554 423"
               fill="none"
-              stroke="rgba(255,255,255,0.18)"
+              stroke="rgba(198,249,255,0.20)"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M108 438 C189 487 341 497 455 480"
+              fill="none"
+              stroke="rgba(255,255,255,0.11)"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+
+            <!-- Left rock shadow -->
+            <ellipse cx="203" cy="445" rx="80" ry="18" fill="rgba(0,0,0,0.25)"/>
+
+            <!-- Left big rock -->
+            <path
+              d="M60 270 L79 230 L112 205 L157 190 L204 198 L239 221 L254 258 L242 297 L207 322 L153 335 L103 326 L70 302 Z"
+              fill="url(#rockGrad)"
+            />
+            <path
+              d="M88 244 L122 222 L170 213 L212 226"
+              fill="none"
+              stroke="rgba(255,255,255,0.22)"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+            <path
+              d="M102 290 L145 278 L180 287 M167 228 L155 257 L190 266 M215 244 L195 266"
+              fill="none"
+              stroke="rgba(48,55,60,0.42)"
               stroke-width="4"
               stroke-linecap="round"
             />
             <path
-              d="M357 188 L373 182 L399 184"
+              d="M72 306 L105 326 L153 335 L207 322 L237 302"
               fill="none"
-              stroke="rgba(255,255,255,0.20)"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-          </g>
-
-          <!-- Waterfall coming off stacked stones -->
-          <g class="falls-main">
-            <path
-              d="M384 186
-                 C391 184 399 184 406 187
-                 C414 191 419 201 418 214
-                 C417 227 414 239 411 254
-                 C407 275 406 294 409 315
-                 C411 326 414 338 419 348
-                 C411 353 401 355 390 353
-                 C392 338 391 323 389 307
-                 C386 288 383 270 381 252
-                 C379 236 378 220 379 207
-                 C380 196 381 189 384 186 Z"
-              fill="url(#waterfallGrad)"
-              opacity="0.96"
-            />
-
-            <path
-              class="falls-stream1"
-              d="M391 191 C392 211 393 232 393 255 C393 281 395 304 399 326"
-              fill="none"
-              stroke="rgba(255,255,255,0.72)"
-              stroke-width="5"
-              stroke-linecap="round"
-            />
-            <path
-              class="falls-stream2"
-              d="M401 191 C404 213 405 236 405 260 C405 285 406 306 410 329"
-              fill="none"
-              stroke="rgba(205,248,255,0.56)"
-              stroke-width="3.2"
-              stroke-linecap="round"
-            />
-            <path
-              class="falls-stream3"
-              d="M384 199 C385 220 385 243 384 265 C383 285 384 304 387 323"
-              fill="none"
-              stroke="rgba(190,241,250,0.50)"
-              stroke-width="2.7"
+              stroke="rgba(0,0,0,0.20)"
+              stroke-width="9"
               stroke-linecap="round"
             />
 
-            <g class="falls-foam">
-              <ellipse cx="402" cy="353" rx="34" ry="14" fill="url(#foamGrad)"/>
-              <ellipse cx="401" cy="347" rx="20" ry="7" fill="rgba(255,255,255,0.62)"/>
+            <!-- Stacked stones behind waterfall -->
+            <g class="stacked-stone">
+              <ellipse cx="395" cy="402" rx="64" ry="16" fill="rgba(0,0,0,0.20)"/>
+
+              <!-- bottom layer -->
+              <path
+                d="M287 309 L321 286 L370 285 L408 298 L422 325 L412 351 L374 365 L325 364 L293 347 L279 330 Z"
+                fill="url(#rockGradDark)"
+              />
+              <path
+                d="M392 308 L429 289 L475 293 L502 315 L494 344 L456 360 L414 356 L388 336 Z"
+                fill="url(#rockGrad)"
+              />
+
+              <!-- middle layer -->
+              <path
+                d="M331 266 L362 248 L402 250 L425 270 L420 293 L387 307 L346 304 L325 286 Z"
+                fill="url(#rockGrad)"
+              />
+              <path
+                d="M401 264 L430 247 L469 250 L492 268 L487 291 L456 304 L414 301 L394 284 Z"
+                fill="url(#rockGradDark)"
+              />
+
+              <!-- top layer -->
+              <path
+                d="M354 228 L384 214 L420 218 L438 234 L434 252 L405 262 L368 259 L350 244 Z"
+                fill="url(#rockGrad)"
+              />
+              <path
+                d="M414 224 L441 210 L473 214 L489 228 L486 245 L462 255 L428 252 L412 239 Z"
+                fill="url(#rockGradDark)"
+              />
+
+              <!-- little top lip where water begins -->
+              <path
+                d="M394 238 C405 233 418 233 429 238 C423 244 415 247 404 247 C399 247 396 245 394 238 Z"
+                fill="rgba(66,95,99,0.85)"
+              />
+
+              <!-- rock highlights -->
+              <path
+                d="M304 314 L330 299 L365 298"
+                fill="none"
+                stroke="rgba(255,255,255,0.16)"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M342 270 L362 257 L392 257"
+                fill="none"
+                stroke="rgba(255,255,255,0.17)"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                d="M364 231 L386 220 L416 223"
+                fill="none"
+                stroke="rgba(255,255,255,0.18)"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </g>
+
+            <!-- Waterfall -->
+            <g class="falls-body">
+              <!-- main waterfall body -->
+              <path
+                d="M404 242
+                   C414 241 423 244 430 250
+                   C438 257 441 268 441 282
+                   C441 299 438 316 437 334
+                   C436 351 438 367 442 383
+                   C434 387 425 389 414 389
+                   C414 374 413 359 410 344
+                   C406 322 402 302 400 284
+                   C399 268 398 253 404 242 Z"
+                fill="url(#waterfallGrad)"
+                opacity="0.94"
+              />
+
+              <!-- left spill edge -->
+              <path
+                d="M395 247
+                   C401 246 406 248 410 252
+                   C413 257 414 266 413 276
+                   C411 292 410 310 410 330
+                   C410 348 412 365 415 383
+                   C409 386 403 386 398 384
+                   C397 368 395 351 394 334
+                   C392 312 391 294 391 278
+                   C390 263 391 253 395 247 Z"
+                fill="#c6f8ff"
+                opacity="0.42"
+              />
+
+              <!-- stream lines -->
+              <path
+                class="falls-line-a"
+                d="M409 248 C410 271 410 294 410 318 C410 342 411 362 414 385"
+                fill="none"
+                stroke="rgba(255,255,255,0.78)"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <path
+                class="falls-line-b"
+                d="M418 249 C420 272 421 296 421 321 C421 344 423 363 426 384"
+                fill="none"
+                stroke="rgba(219,251,255,0.55)"
+                stroke-width="3.5"
+                stroke-linecap="round"
+              />
+              <path
+                class="falls-line-c"
+                d="M401 252 C402 275 402 299 401 324 C400 345 401 363 403 382"
+                fill="none"
+                stroke="rgba(210,248,255,0.5)"
+                stroke-width="2.8"
+                stroke-linecap="round"
+              />
+              <path
+                class="falls-line-d"
+                d="M427 255 C428 277 430 300 431 324 C432 345 434 364 437 382"
+                fill="none"
+                stroke="rgba(190,241,250,0.46)"
+                stroke-width="2.4"
+                stroke-linecap="round"
+              />
+
+              <!-- mist and splash where it hits -->
+              <g class="falls-mist">
+                <ellipse cx="417" cy="392" rx="26" ry="10" fill="rgba(201,248,255,0.35)"/>
+              </g>
+
+              <g class="falls-foam">
+                <ellipse cx="418" cy="397" rx="38" ry="14" fill="url(#foamGrad)"/>
+                <ellipse cx="418" cy="391" rx="20" ry="7" fill="rgba(255,255,255,0.64)"/>
+                <path
+                  d="M395 390 C401 384 405 381 409 379
+                     M424 379 C431 382 437 386 442 392
+                     M410 387 C414 382 420 381 426 386"
+                  fill="none"
+                  stroke="rgba(232,253,255,0.52)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </g>
+            </g>
+
+            <!-- Reeds on right -->
+            <g opacity="0.95">
+              <path d="M500 300 C491 238 481 190 492 143 C506 190 509 239 513 303 Z" fill="url(#reedGrad)"/>
+              <path d="M526 307 C529 246 543 193 570 150 C562 205 551 257 542 312 Z" fill="url(#reedGrad)"/>
+              <path d="M474 306 C453 253 438 204 444 158 C470 212 484 255 490 310 Z" fill="url(#reedGrad)"/>
+              <path d="M551 315 C569 265 594 222 627 189 C604 244 584 286 564 321 Z" fill="url(#reedGrad)"/>
+              <path d="M450 316 C419 279 396 236 389 197 C424 241 449 283 466 323 Z" fill="url(#reedGrad)"/>
+              <path d="M511 315 C506 273 505 234 516 197 C526 239 529 279 526 320 Z" fill="url(#reedGrad)"/>
+              <path d="M485 318 C467 282 455 245 459 214 C482 254 495 287 500 322 Z" fill="url(#reedGrad)"/>
+              <path d="M536 319 C548 284 565 253 590 228 C574 268 559 299 548 324 Z" fill="url(#reedGrad)"/>
+            </g>
+
+            <!-- Foreground stone -->
+            <g fill="#6f777b" opacity="0.95">
+              <path d="M133 430 L156 418 L183 425 L190 444 L171 457 L141 451 Z"/>
+            </g>
+
+            <!-- Moss accents -->
+            <g fill="#91b668" opacity="0.8">
+              <path d="M116 247 C104 226 100 204 110 184 C128 209 135 231 132 252Z"/>
+              <path d="M606 326 C627 309 646 302 666 307 C645 331 625 342 602 344Z"/>
+              <path d="M404 454 C420 438 443 432 470 438 C452 459 428 468 404 454Z"/>
             </g>
           </g>
-
-          <!-- Reeds on right -->
-          <g opacity="0.95">
-            <path d="M500 300 C491 238 481 190 492 143 C506 190 509 239 513 303 Z" fill="url(#reedGrad)"/>
-            <path d="M526 307 C529 246 543 193 570 150 C562 205 551 257 542 312 Z" fill="url(#reedGrad)"/>
-            <path d="M474 306 C453 253 438 204 444 158 C470 212 484 255 490 310 Z" fill="url(#reedGrad)"/>
-            <path d="M551 315 C569 265 594 222 627 189 C604 244 584 286 564 321 Z" fill="url(#reedGrad)"/>
-            <path d="M450 316 C419 279 396 236 389 197 C424 241 449 283 466 323 Z" fill="url(#reedGrad)"/>
-            <path d="M511 315 C506 273 505 234 516 197 C526 239 529 279 526 320 Z" fill="url(#reedGrad)"/>
-            <path d="M485 318 C467 282 455 245 459 214 C482 254 495 287 500 322 Z" fill="url(#reedGrad)"/>
-            <path d="M536 319 C548 284 565 253 590 228 C574 268 559 299 548 324 Z" fill="url(#reedGrad)"/>
-          </g>
-
-          <!-- Foreground stone -->
-          <g fill="#6f777b" opacity="0.95">
-            <path d="M133 430 L156 418 L183 425 L190 444 L171 457 L141 451 Z"/>
-          </g>
-
-          <!-- Moss accents -->
-          <g fill="#91b668" opacity="0.8">
-            <path d="M116 247 C104 226 100 204 110 184 C128 209 135 231 132 252Z"/>
-            <path d="M606 326 C627 309 646 302 666 307 C645 331 625 342 602 344Z"/>
-            <path d="M404 454 C420 438 443 432 470 438 C452 459 428 468 404 454Z"/>
-          </g>
         </svg>
-
-        <div class="water-feature" aria-hidden="true">
-          <div class="drop-trail"></div>
-          <div class="drop"></div>
-          <div class="impact-glow"></div>
-          <div class="surface-line"></div>
-          <div class="ripple-ring one"></div>
-          <div class="ripple-ring two"></div>
-          <div class="ripple-ring three"></div>
-        </div>
 
         <div class="floating-card">
           <h2>Built like nature. Finished like art.</h2>
