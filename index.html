@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jerry's Ponds LLC | Artistic Pond Design in Richland, WA</title>
+
+  <style>
+    :root {
+      --deep: #082f33;
+      --pond: #0b5d63;
+      --water: #39c6d6;
+      --moss: #8fc46c;
+      --sand: #f4e7c5;
+      --cream: #fffaf0;
+      --glass: rgba(255, 255, 255, 0.14);
+      --shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(57, 198, 214, 0.45), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(143, 196, 108, 0.35), transparent 24%),
+        linear-gradient(135deg, #061f24 0%, #08343a 42%, #09251f 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      left: -220px;
+      bottom: -260px;
+      background: radial-gradient(circle, rgba(57,198,214,0.22), transparent 68%);
+      filter: blur(8px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 31, 36, 0.78);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      font-size: 1.05rem;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, #ffffff 0 6%, transparent 7%),
+        radial-gradient(circle at 45% 45%, var(--water), var(--pond) 58%, var(--moss));
+      box-shadow: 0 0 28px rgba(57, 198, 214, 0.45);
+      position: relative;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.45);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .nav-call {
+      padding: 10px 15px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--water), var(--moss));
+      color: #06262a;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(57,198,214,0.22);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 82vh;
+      padding: 84px 22px 54px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.86);
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--moss);
+      box-shadow: 0 0 0 8px rgba(143,196,108,0.15);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: 0.9;
+      letter-spacing: -4px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff, #bff7ff 42%, #bdf09a 76%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .tagline {
+      margin: 24px 0 0;
+      max-width: 640px;
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
+      line-height: 1.55;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--water), var(--moss));
+      color: #06262a;
+      box-shadow: 0 18px 40px rgba(57,198,214,0.24);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+      color: white;
+    }
+
+    .pond-art {
+      position: relative;
+      min-height: 510px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 40% 34%, rgba(255,255,255,0.8) 0 2%, transparent 3%),
+        radial-gradient(ellipse at center, #42d3e0 0%, #0d7a80 37%, #08383f 72%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .pond-art::before,
+    .pond-art::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.28);
+      animation: ripple 5s infinite ease-out;
+    }
+
+    .pond-art::before {
+      width: 180px;
+      height: 180px;
+      left: 48%;
+      top: 44%;
+    }
+
+    .pond-art::after {
+      width: 290px;
+      height: 290px;
+      left: 36%;
+      top: 32%;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0.55);
+        opacity: 0.75;
+      }
+      100% {
+        transform: scale(1.7);
+        opacity: 0;
+      }
+    }
+
+    .stone {
+      position: absolute;
+      border-radius: 44% 56% 50% 50%;
+      background: linear-gradient(135deg, #d9c69d, #7e8067);
+      box-shadow: inset -12px -14px 24px rgba(0,0,0,0.22);
+    }
+
+    .stone.one {
+      width: 120px;
+      height: 82px;
+      left: 32px;
+      top: 54px;
+      transform: rotate(-13deg);
+    }
+
+    .stone.two {
+      width: 156px;
+      height: 96px;
+      right: 34px;
+      bottom: 72px;
+      transform: rotate(14deg);
+    }
+
+    .stone.three {
+      width: 92px;
+      height: 68px;
+      left: 64px;
+      bottom: 54px;
+      transform: rotate(22deg);
+    }
+
+    .plant {
+      position: absolute;
+      width: 16px;
+      height: 110px;
+      background: linear-gradient(var(--moss), #315d32);
+      border-radius: 999px 999px 0 0;
+      transform-origin: bottom;
+      opacity: 0.9;
+    }
+
+    .plant.a { right: 98px; top: 56px; transform: rotate(-22deg); }
+    .plant.b { right: 70px; top: 72px; transform: rotate(10deg); height: 92px; }
+    .plant.c { right: 128px; top: 86px; transform: rotate(-4deg); height: 76px; }
+
+    .floating-card {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      padding: 22px;
+      border-radius: 26px;
+      background: rgba(4, 28, 32, 0.58);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .floating-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.3rem;
+    }
+
+    .floating-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.76);
+      line-height: 1.5;
+    }
+
+    section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 70px 22px;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      letter-spacing: -2px;
+    }
+
+    .section-title p {
+      margin: 0;
+      max-width: 580px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 26px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.13);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(57,198,214,0.85), rgba(143,196,108,0.85));
+      color: #06262a;
+      font-size: 1.45rem;
+      font-weight: 900;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .photo {
+      min-height: 250px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.15);
+      background:
+        linear-gradient(135deg, rgba(57,198,214,0.42), rgba(143,196,108,0.30)),
+        radial-gradient(circle at 50% 40%, rgba(255,255,255,0.28), transparent 22%),
+        linear-gradient(135deg, #0a454b, #173629);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    }
+
+    /*
+      To use real photos later:
+      1. Upload images to the same GitHub folder as this index.html.
+      2. Replace the background section below with:
+         background-image: url("pond-1.jpg");
+         background-size: cover;
+         background-position: center;
+    */
+
+    .photo:nth-child(2) {
+      min-height: 330px;
+      background:
+        linear-gradient(135deg, rgba(244,231,197,0.28), rgba(57,198,214,0.36)),
+        linear-gradient(135deg, #193927, #0b6268);
+    }
+
+    .photo:nth-child(3) {
+      background:
+        linear-gradient(135deg, rgba(143,196,108,0.38), rgba(57,198,214,0.26)),
+        linear-gradient(135deg, #123c36, #10251d);
+    }
+
+    .photo:nth-child(4) {
+      min-height: 330px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.2), rgba(57,198,214,0.34)),
+        linear-gradient(135deg, #0f5961, #4b6b3b);
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(4, 28, 32, 0.68);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 800;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .big-quote {
+      border-radius: 34px;
+      padding: 34px;
+      background: linear-gradient(135deg, rgba(57,198,214,0.18), rgba(143,196,108,0.15));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.17);
+    }
+
+    .big-quote p {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      font-weight: 900;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--sand);
+      color: #14332d;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+    }
+
+    .step p {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.48;
+    }
+
+    .contact {
+      border-radius: 42px;
+      padding: 44px;
+      background:
+        radial-gradient(circle at top left, rgba(57,198,214,0.32), transparent 34%),
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      letter-spacing: -2px;
+    }
+
+    .contact p {
+      margin: 0;
+      color: rgba(255,255,255,0.74);
+      line-height: 1.55;
+      font-size: 1.05rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(6,31,36,0.56);
+      border: 1px solid rgba(255,255,255,0.13);
+      font-weight: 900;
+    }
+
+    .contact-link span {
+      color: rgba(255,255,255,0.68);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    footer {
+      padding: 34px 22px 44px;
+      text-align: center;
+      color: rgba(255,255,255,0.58);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .hero,
+      .process,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .pond-art {
+        min-height: 430px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-title {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav {
+        padding: 14px 16px;
+      }
+
+      .logo {
+        font-size: 0.95rem;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 54px 16px;
+      }
+
+      .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .photo,
+      .photo:nth-child(2),
+      .photo:nth-child(4) {
+        min-height: 260px;
+      }
+
+      .contact {
+        padding: 28px;
+        border-radius: 30px;
+      }
+
+      .contact-link {
+        display: grid;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="#">
+        <div class="logo-mark"></div>
+        <div>Jerry's Ponds LLC</div>
+      </a>
+
+      <nav>
+        <a href="#work">Pond Art</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-call" href="tel:5555555555">Call Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          Custom pond building in Richland, Washington
+        </div>
+
+        <h1>
+          Water, stone, and art in
+          <span class="gradient-text">perfect motion.</span>
+        </h1>
+
+        <p class="tagline">
+          Jerry's Ponds LLC designs and builds creative, one-of-a-kind ponds that turn ordinary outdoor spaces into living artwork.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="tel:5555555555">Call 555-555-5555</a>
+          <a class="btn btn-ghost" href="mailto:hello@jerrysponds.com">Email Jerry</a>
+        </div>
+      </div>
+
+      <div class="pond-art" aria-label="Artistic pond graphic">
+        <div class="stone one"></div>
+        <div class="stone two"></div>
+        <div class="stone three"></div>
+
+        <div class="plant a"></div>
+        <div class="plant b"></div>
+        <div class="plant c"></div>
+
+        <div class="floating-card">
+          <h2>Built like nature. Finished like art.</h2>
+          <p>
+            Every pond is shaped around the property, the stones, the water flow, and Jerry’s creative eye.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-title">
+        <h2>Not cookie-cutter ponds.</h2>
+        <p>
+          Jerry blends pond construction with artistic design, creating water features that feel natural, personal, and completely unique.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">≈</div>
+          <h3>Custom Water Features</h3>
+          <p>
+            Peaceful backyard ponds, small water gardens, statement features, and creative outdoor focal points.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">◒</div>
+          <h3>Stone & Landscape Flow</h3>
+          <p>
+            Natural-looking layouts using rock, texture, curves, plants, and movement to make the pond feel like it belongs.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">✦</div>
+          <h3>Artistic Details</h3>
+          <p>
+            Each build has its own personality, with details designed around the customer’s space and Jerry’s creative style.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-title">
+        <h2>Project gallery</h2>
+        <p>
+          Replace these placeholders with real pond photos once you have them. The layout is already set up to show off finished work.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <div class="photo">
+          <div class="photo-label">Photo Placeholder 1</div>
+        </div>
+
+        <div class="photo">
+          <div class="photo-label">Photo Placeholder 2</div>
+        </div>
+
+        <div class="photo">
+          <div class="photo-label">Photo Placeholder 3</div>
+        </div>
+
+        <div class="photo">
+          <div class="photo-label">Photo Placeholder 4</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="process">
+        <div class="big-quote">
+          <p>
+            “A pond should look like it was discovered, not dropped into the yard.”
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="number">1</div>
+            <div>
+              <h3>Dream it</h3>
+              <p>
+                Talk through the space, the feel, the size, and the kind of pond or water feature you imagine.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="number">2</div>
+            <div>
+              <h3>Shape it</h3>
+              <p>
+                Jerry designs the flow, layout, stones, edges, and visual character around the property.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="number">3</div>
+            <div>
+              <h3>Bring it to life</h3>
+              <p>
+                The build comes together with water movement, texture, natural detail, and a finished artistic look.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <h2>Ready to build something unforgettable?</h2>
+          <p>
+            Contact Jerry's Ponds LLC in Richland, Washington to talk about a custom pond, backyard water feature, or creative outdoor project.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a class="contact-link" href="tel:5555555555">
+            <div>
+              <span>Phone</span>
+              <div>555-555-5555</div>
+            </div>
+            <div>→</div>
+          </a>
+
+          <a class="contact-link" href="mailto:hello@jerrysponds.com">
+            <div>
+              <span>Email</span>
+              <div>hello@jerrysponds.com</div>
+            </div>
+            <div>→</div>
+          </a>
+
+          <div class="contact-link">
+            <div>
+              <span>Location</span>
+              <div>Richland, Washington</div>
+            </div>
+            <div>⌖</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Jerry's Ponds LLC · Custom artistic ponds in Richland, WA
+  </footer>
+</body>
+</html>
